@@ -1,13 +1,13 @@
 import {SectionStat, TitleStat, ListStat, ItemStat } from "./Statistics.styled"
 
 
-export const Statistics = ({ stats }) => {
+export const Statistics = ({ stats, title}) => {
     function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
 }
     return (
         <SectionStat>
-            <TitleStat>Upload stats</TitleStat>
+            {title &&   <TitleStat>{title}</TitleStat>}
 
             <ListStat>
                 {stats.map(stat => (
